@@ -1,0 +1,28 @@
+.carousel-title {
+    margin-bottom:200px;
+    margin-right:620px;
+    font-size: 90px;
+}
+.carousel-title2 {
+    margin-bottom:80px;
+    font-size: 90px;
+}
+
+@media only screen and (max-width: 600px) {
+    .carousel-title {
+        margin-bottom:20px;
+        margin-right:150px;
+        font-size: 25px;
+    }
+    .carousel-des {
+        font-size: 10px;
+    }
+    .carousel-title2 {
+        margin-bottom:0px;
+        margin-right:20px;
+        font-size: 25px;
+    }
+    .carousel-des2 {
+        font-size: 10px;
+    }
+}

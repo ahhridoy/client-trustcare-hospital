@@ -1,0 +1,56 @@
+[
+    {
+       "id":1,
+       "name":"Medicine Specialists",
+       "description":"They care for people who are critically ill or injured, often heading intensive care units in hospitals.",
+       "img":"https://i.ibb.co/mB2Zh67/Medicine-Specialists.png"
+    },
+    {
+       "id":2,
+       "name":"Anesthesiology",
+       "description":"They care for people who are critically ill or injured, often heading intensive care units in hospitals.",
+       "img":"https://i.ibb.co/Ry3Mshs/Anesthesiology.png"
+    },
+    {
+       "id":3,
+       "name":"Psychiatrists",
+       "description":"They care for people who are critically ill or injured, often heading intensive care units in hospitals.",
+       "img":"https://i.ibb.co/m8d5Ydn/psychiatrists.png"
+    },
+    {
+       "id":4,
+       "name":"Cardiology",
+       "description":"They care for people who are critically ill or injured, often heading intensive care units in hospitals.",
+       "img":"https://i.ibb.co/8cJv9fY/cardiology.png"
+    },
+    {
+       "id":5,
+       "name":"Dental",
+       "description":"They care for people who are critically ill or injured, often heading intensive care units in hospitals.",
+       "img":"https://i.ibb.co/JFBgvzX/dental.png"
+    },
+    {
+       "id":6,
+       "name":"Immunology",
+       "description":"They care for people who are critically ill or injured, often heading intensive care units in hospitals.",
+       "img":"https://i.ibb.co/wW4GScx/Immunology.png"
+    },
+    {
+       "id":7,
+       "name":"Neurology",
+       "description":"They care for people who are critically ill or injured, often heading intensive care units in hospitals.",
+       "img":"https://i.ibb.co/9gCP2kJ/neurology.png"
+    },
+    {
+       "id":8,
+       "name":"Pediatricians",
+       "description":"They care for people who are critically ill or injured, often heading intensive care units in hospitals.",
+       "img":"https://i.ibb.co/7b0CpG1/PEDIATRICIANS.png"
+    },
+    {
+       "id":9,
+       "name":"Radiology",
+       "description":"They care for people who are critically ill or injured, often heading intensive care units in hospitals.",
+       "img":"https://i.ibb.co/bbmStfb/radiology.png"
+    }
+ ]
