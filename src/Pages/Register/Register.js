@@ -26,7 +26,7 @@ const Register = () => {
         <Container className="mt-4">
             <Row>
                 <Col md={8} className="login-input mb-4">
-                    <h2>Create Account</h2> <br />
+                    <h2 className="fw-bold">Create Account</h2> <br />
 
                     {/* register form */}
                     <form>
