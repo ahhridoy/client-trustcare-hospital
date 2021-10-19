@@ -15,6 +15,7 @@ import initializeAuthentication from "../Firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
+    // useStates
     const [user, setUser] = useState({});
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -22,51 +23,55 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
 
+    // google sign in function
     const signInUsingGoogle = () => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
-        return signInWithPopup(auth, googleProvider)
+        return signInWithPopup(auth, googleProvider);
     };
 
+    // github sign in function
     const signInUsingGithub = () => {
         setIsLoading(true);
         const githubProvider = new GithubAuthProvider();
-        return signInWithPopup(auth, githubProvider)
+        return signInWithPopup(auth, githubProvider);
     };
 
-    const handleEmail = e => {
+    // email password sign up function
+    const handleEmail = (e) => {
         setEmail(e.target.value);
     };
-    const handlePassword = e => {
+    const handlePassword = (e) => {
         setPassword(e.target.value);
     };
     const signUpUsingEmailPassword = () => {
         // console.log(email, password)
         createUserWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            verifyEmail();
-            setUser(result.user);
-        })
-        .catch(error => {
-            setError(error.message);
-        })
+            .then((result) => {
+                verifyEmail();
+                setUser(result.user);
+            })
+            .catch((error) => {
+                setError(error.message);
+            });
     };
     const verifyEmail = () => {
-        sendEmailVerification(auth.currentUser)
-        .then(result => {})
+        sendEmailVerification(auth.currentUser).then((result) => {});
     };
 
+    // email password sign in function
     const signInUsingEmailPassword = () => {
         // console.log(email, password)
         signInWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            setUser(result.user);
-        })
-        .catch(error => {
-            setError(error.message);
-        })  
+            .then((result) => {
+                setUser(result.user);
+            })
+            .catch((error) => {
+                setError(error.message);
+            });
     };
 
+    // observe user state change
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -74,15 +79,16 @@ const useFirebase = () => {
             } else {
                 setUser({});
             }
-            setIsLoading(false)
+            setIsLoading(false);
         });
         return () => unsubscribed;
     }, []);
 
+    // sign out function
     const logOut = () => {
         signOut(auth)
-        .then(() => {})
-        .finally(() => setIsLoading(false));
+            .then(() => {})
+            .finally(() => setIsLoading(false));
     };
 
     return {

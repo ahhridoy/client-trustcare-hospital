@@ -4,8 +4,13 @@ import Banner from "../Banner/Banner";
 import Doctors from "../Doctors/Doctors";
 import ServicesHome from "../ServicesHome/ServicesHome";
 import TeamDetails from "../TeamDetails/TeamDetails";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
+    // fontawesome icons
+    const icon = <FontAwesomeIcon icon={faSearch} />
+
     return (
         <div>
             <Banner></Banner>
@@ -14,7 +19,7 @@ const Home = () => {
                     <InputGroup className="mb-3 w-50">
                         <FormControl placeholder="Search our services" />
                         <Button variant="outline-info" id="button-addon2">
-                            Search
+                            {icon} Search
                         </Button>
                     </InputGroup>
                 </Container>

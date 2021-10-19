@@ -4,9 +4,17 @@ import { Button, Container, Image, Nav, Navbar } from "react-bootstrap";
 import "./Header.css";
 import logo from "../../../images/logo.png";
 import useAuth from "../../Hooks/useAuth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignInAlt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+    // fontawesome icons
+    const icon = <FontAwesomeIcon icon={faSignInAlt} />;
+    const icon2 = <FontAwesomeIcon icon={faSignOutAlt} />;
+
+    // hooks
     const { user, logOut } = useAuth();
+
     return (
         <div>
             <Navbar
@@ -22,6 +30,8 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
+                        
+                        {/* nav routes */}
                         <Nav className="ms-auto nav-bar">
                             <Nav.Link
                                 as={Link}
@@ -52,13 +62,14 @@ const Header = () => {
                                 <span>Contact Us</span>
                             </Nav.Link>
 
+                            {/* buttons */}
                             {user.email ? (
                                 <Button
                                     onClick={logOut}
                                     className="fs-5 text-light"
                                     variant="info"
                                 >
-                                    Logout
+                                    Logout {icon2}
                                 </Button>
                             ) : (
                                 <Link to="/login">
@@ -66,11 +77,13 @@ const Header = () => {
                                         className="fs-5 text-light"
                                         variant="info"
                                     >
-                                        Login
+                                        Login {icon}
                                     </Button>
                                 </Link>
                             )}
                         </Nav>
+
+                        {/* user name */}
                         <Navbar.Text className="text-dark ms-3">
                             Logged in as: <p>{user?.displayName}</p>
                         </Navbar.Text>

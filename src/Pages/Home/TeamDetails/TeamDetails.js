@@ -14,7 +14,7 @@ const TeamDetails = () => {
                         </h1>
                         <h4 className="text-dark fw-normal">
                             Dr. Stephanie Wosniack is is dedicated to providing
-                            her  patients with the best possible care. We at
+                            her patients with the best possible care. We at
                             MediCare are focused on helping you. After receiving
                             successful care for various aches and pains over the
                             years, Dr. Woshiack found her calling to help others

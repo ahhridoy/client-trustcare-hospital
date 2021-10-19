@@ -6,8 +6,11 @@ import doctor3 from "../../../images/doctor/doctor3.png";
 
 const Doctors = () => {
     return (
+        // doctors container
         <Container>
-            <h1 className="fw-bold text-dark mt-5 mb-3">Our Special <span className="text-info">Doctors</span></h1>
+            <h1 className="fw-bold text-dark mt-5 mb-3">
+                Our Special <span className="text-info">Doctors</span>
+            </h1>
             <Row>
                 <Col md={4}>
                     <div className="bg-light p-3 m-2 rounded">

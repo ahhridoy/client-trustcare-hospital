@@ -18,6 +18,7 @@ function App() {
     return (
         <div className="App bg-color">
             <AuthProvider>
+                {/* all routes */}
                 <Router>
                     <Header></Header>
 

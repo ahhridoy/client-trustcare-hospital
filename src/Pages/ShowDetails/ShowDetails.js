@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { useParams } from "react-router";
 
 const ShowDetails = () => {
+    // hooks
     const { serviceId } = useParams();
     const [data, setData] = useState([]);
 
@@ -12,6 +13,7 @@ const ShowDetails = () => {
             .then((data) => setData(data));
     }, []);
 
+    // filter
     const ExactItem = data.filter((td) => td.id == serviceId);
 
     return (
