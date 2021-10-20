@@ -37,6 +37,12 @@ const Login = () => {
             history.push(redirectUrl);
         });
     };
+    const handleEmailPasswordSignIn = () => {
+        signInUsingEmailPassword().then((result) => {
+            history.push(redirectUrl);
+            window.location.reload();
+        });
+    };
 
     return (
         <Container className="mt-4">
@@ -65,7 +71,7 @@ const Login = () => {
                         <br />
 
                         <Button
-                            onClick={signInUsingEmailPassword}
+                            onClick={handleEmailPasswordSignIn}
                             className="w-50 text-light"
                             variant="info"
                         >

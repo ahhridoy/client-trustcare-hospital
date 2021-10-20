@@ -16,6 +16,7 @@ const Register = () => {
     const {
         handleEmail,
         handlePassword,
+        handleName,
         signUpUsingEmailPassword,
         signInUsingGoogle,
         signInUsingGithub,
@@ -30,6 +31,14 @@ const Register = () => {
 
                     {/* register form */}
                     <form>
+                        <input
+                            onBlur={handleName}
+                            className="w-50"
+                            type="email"
+                            placeholder="Enter Name"
+                            required
+                        />{" "}
+                        <br /> <br />
                         <input
                             onBlur={handleEmail}
                             className="w-50"

@@ -5,6 +5,7 @@ import {
     GithubAuthProvider,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    updateProfile,
     onAuthStateChanged,
     sendEmailVerification,
     signOut,
@@ -19,6 +20,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
@@ -38,6 +40,9 @@ const useFirebase = () => {
     };
 
     // email password sign up function
+    const handleName = (e) => {
+        setName(e.target.value);
+    };
     const handleEmail = (e) => {
         setEmail(e.target.value);
     };
@@ -48,8 +53,13 @@ const useFirebase = () => {
         // console.log(email, password)
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
-                verifyEmail();
-                setUser(result.user);
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                }).then(() => {
+                    verifyEmail();
+                    setUser(result.user);
+                    window.location.reload();
+                });
             })
             .catch((error) => {
                 setError(error.message);
@@ -62,13 +72,7 @@ const useFirebase = () => {
     // email password sign in function
     const signInUsingEmailPassword = () => {
         // console.log(email, password)
-        signInWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                setUser(result.user);
-            })
-            .catch((error) => {
-                setError(error.message);
-            });
+        return signInWithEmailAndPassword(auth, email, password);
     };
 
     // observe user state change
@@ -97,6 +101,7 @@ const useFirebase = () => {
         signInUsingGithub,
         handleEmail,
         handlePassword,
+        handleName,
         signUpUsingEmailPassword,
         signInUsingEmailPassword,
         error,
