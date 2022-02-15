@@ -6,10 +6,12 @@ import ServicesHome from "../ServicesHome/ServicesHome";
 import TeamDetails from "../TeamDetails/TeamDetails";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Footer from "../../Shared/Footer/Footer";
+import Header from "../../Shared/Header/Header";
 
 const Home = () => {
     // fontawesome icons
-    const icon = <FontAwesomeIcon icon={faSearch} />
+    const icon = <FontAwesomeIcon icon={faSearch} />;
 
     return (
         <div>

@@ -53,7 +53,7 @@ const Header = () => {
                                 className="text-dark fw-bold me-2"
                                 to="/contactUs"
                             >
-                                <span>Contact Us</span>
+                                <span>Contact</span>
                             </Nav.Link>
 
                             <Nav.Link

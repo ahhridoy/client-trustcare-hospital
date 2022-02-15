@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 const ShowDetails = () => {
     // hooks
@@ -23,6 +24,11 @@ const ShowDetails = () => {
                 <h1>{ExactItem[0]?.name}</h1>
                 <p>{ExactItem[0]?.description}</p>
             </div>
+            <Link to="/home">
+                <Button className="w-25 mb-5" variant="primary">
+                    Back to home
+                </Button>
+            </Link>
         </Container>
     );
 };

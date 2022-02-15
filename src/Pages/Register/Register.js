@@ -5,6 +5,8 @@ import useAuth from "../Hooks/useAuth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
+import Header from "../Shared/Header/Header";
+import Footer from "../Shared/Footer/Footer";
 
 const Register = () => {
     // fontawesome icons
@@ -24,75 +26,77 @@ const Register = () => {
     } = useAuth();
 
     return (
-        <Container className="mt-4">
-            <Row>
-                <Col md={8} className="login-input mb-4">
-                    <h2 className="fw-bold">Create Account</h2> <br />
-
-                    {/* register form */}
-                    <form>
-                        <input
-                            onBlur={handleName}
-                            className="w-50"
-                            type="email"
-                            placeholder="Enter Name"
-                            required
-                        />{" "}
-                        <br /> <br />
-                        <input
-                            onBlur={handleEmail}
-                            className="w-50"
-                            type="email"
-                            placeholder="Enter Email"
-                            required
-                        />{" "}
-                        <br /> <br />
-                        <input
-                            onBlur={handlePassword}
-                            className="w-50"
-                            type="password"
-                            placeholder="Enter Password"
-                            required
-                        />{" "}
-                        <br /> <p className="text-danger">{error}</p> <br />
+        <>
+            <Container className="mt-4">
+                <Row>
+                    <Col md={8} className="login-input mb-4">
+                        <h2 className="fw-bold">Create Account</h2> <br />
+                        {/* register form */}
+                        <form>
+                            <input
+                                onBlur={handleName}
+                                className="w-50"
+                                type="email"
+                                placeholder="Enter Name"
+                                required
+                            />{" "}
+                            <br /> <br />
+                            <input
+                                onBlur={handleEmail}
+                                className="w-50"
+                                type="email"
+                                placeholder="Enter Email"
+                                required
+                            />{" "}
+                            <br /> <br />
+                            <input
+                                onBlur={handlePassword}
+                                className="w-50"
+                                type="password"
+                                placeholder="Enter Password"
+                                required
+                            />{" "}
+                            <br /> <p className="text-danger">{error}</p> <br />
+                            <Button
+                                onClick={signUpUsingEmailPassword}
+                                className="w-50 text-light"
+                                variant="info"
+                            >
+                                Register {icon}
+                            </Button>{" "}
+                            <br />
+                        </form>
+                        <p>
+                            Already have an account?{" "}
+                            <Link to="/login">Login</Link>
+                        </p>
+                        {/* buttons */}
                         <Button
-                            onClick={signUpUsingEmailPassword}
-                            className="w-50 text-light"
-                            variant="info"
+                            onClick={signInUsingGoogle}
+                            className="w-25 me-2"
+                            variant="warning"
                         >
-                            Register {icon}
-                        </Button>{" "}
-                        <br />
-                    </form>
+                            {icon2} Google Sign In
+                        </Button>
+                        <Button
+                            onClick={signInUsingGithub}
+                            className="w-25"
+                            variant="secondary"
+                        >
+                            {icon3} Github Sign In
+                        </Button>
+                    </Col>
 
-                    <p>
-                        Already have an account? <Link to="/login">Login</Link>
-                    </p>
-
-                    {/* buttons */}
-                    <Button
-                        onClick={signInUsingGoogle}
-                        className="w-25 me-2"
-                        variant="warning"
-                    >
-                       {icon2} Google Sign In
-                    </Button>
-
-                    <Button
-                        onClick={signInUsingGithub}
-                        className="w-25"
-                        variant="secondary"
-                    >
-                       {icon3} Github Sign In
-                    </Button>
-                </Col>
-
-                {/* image columns */}
-                <Col md={4}>
-                    <Image className="w-100 login-input" src={register}></Image>
-                </Col>
-            </Row>
-        </Container>
+                    {/* image columns */}
+                    <Col md={4}>
+                        <Image
+                            className="w-100 login-input"
+                            src={register}
+                        ></Image>
+                    </Col>
+                </Row>
+            </Container>
+        </>
     );
 };
 
