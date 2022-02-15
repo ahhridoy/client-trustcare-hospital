@@ -9,10 +9,10 @@ const Service = (props) => {
     const icon = <FontAwesomeIcon icon={faArrowRight} />
 
     // get data using props
-    const { id, img, name, description } = props.service;
+    const { _id, img, name, description } = props.service;
     const history = useHistory();
     const handleDetails = () => {
-        history.push(`/serviceDetails/${id}`);
+        history.push(`/serviceDetails/${_id}`);
     };
 
     return (

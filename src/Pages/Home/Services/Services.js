@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
-import Footer from "../../Shared/Footer/Footer";
-import Header from "../../Shared/Header/Header";
 import Service2 from "../Service/Service";
 
 const Services = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch("services.json")
+        fetch("https://murmuring-fortress-54571.herokuapp.com/services")
             .then((res) => res.json())
             .then((data) => setServices(data));
     }, []);

@@ -5,8 +5,6 @@ import useAuth from "../Hooks/useAuth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
-import Header from "../Shared/Header/Header";
-import Footer from "../Shared/Footer/Footer";
 
 const Register = () => {
     // fontawesome icons

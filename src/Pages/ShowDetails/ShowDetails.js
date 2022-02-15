@@ -9,20 +9,22 @@ const ShowDetails = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("/services.json")
+        fetch(
+            `https://murmuring-fortress-54571.herokuapp.com/serviceDetails/${serviceId}`
+        )
             .then((res) => res.json())
             .then((data) => setData(data));
-    }, []);
+    }, [serviceId]);
 
     // filter
-    const ExactItem = data.filter((td) => td.id == serviceId);
+    // const ExactItem = data.filter((td) => td.id === serviceId);
 
     return (
         <Container>
             <div className="p-5">
-                <img className="w-50 rounded" src={ExactItem[0]?.img} alt="" />
-                <h1>{ExactItem[0]?.name}</h1>
-                <p>{ExactItem[0]?.description}</p>
+                <img className="w-50 rounded" src={data.img} alt="" />
+                <h1>{data.name}</h1>
+                <p>{data.description}</p>
             </div>
             <Link to="/home">
                 <Button className="w-25 mb-5" variant="primary">

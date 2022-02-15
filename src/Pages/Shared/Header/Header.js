@@ -20,11 +20,12 @@ const Header = () => {
             >
                 <Container>
                     <Navbar.Brand href="#home">
-                        <Image className="w-50" src={logo} fluid></Image>
+                        <Link to="/">
+                            <Image className="w-50" src={logo} fluid></Image>
+                        </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
-                        
                         {/* nav routes */}
                         <Nav className="ms-auto nav-bar">
                             <Nav.Link
@@ -86,9 +87,11 @@ const Header = () => {
                         </Nav>
 
                         {/* user name */}
-                        {user?.email && <Navbar.Text className="text-dark ms-3">
-                            Logged in: <p>{user?.displayName}</p>
-                        </Navbar.Text>}
+                        {user?.email && (
+                            <Navbar.Text className="text-dark ms-3">
+                                Logged in: <p>{user?.displayName}</p>
+                            </Navbar.Text>
+                        )}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

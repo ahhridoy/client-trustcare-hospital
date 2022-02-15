@@ -3,12 +3,11 @@ import React from "react";
 // import { useEffect } from "react";
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import Header from "../../Shared/Header/Header";
-import Appointments from "../Appointments/Appointments";
 import DashboardHome from "../DashboardHome/DashboardHome";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import Review from "../Review/Review";
-import Services from "../Services/Services";
+import AddServices from "../Services/AddServices";
+import ServicesList from "../ServicesList/ServicesList";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -66,39 +65,39 @@ const Dashboard = () => {
                                 </button>
                             </Link>
                             <Link
-                                        to={`${url}/appointments`}
+                                        to={`${url}/servicesList`}
                                         className="w-100 border-0 rounded-3 btn subMenu"
                                     >
                                         <button className="w-100 border-0 rounded-3 btn text-light">
-                                            Appointments
+                                          Services List
                                         </button>
                                     </Link>
-                            <Link
+                            {/* <Link
                                 to={`${url}/review`}
                                 className="w-100 border-0 rounded-3 btn subMenu"
                             >
                                 <button className="w-100 border-0 rounded-3 btn text-light">
                                     Review
                                 </button>
-                            </Link>
+                            </Link> */}
                             {/* {admin && ( */}
                                 <>
                                     <Link
-                                        to={`${url}/services`}
+                                        to={`${url}/addServices`}
                                         className="w-100 border-0 rounded-3 btn subMenu"
                                     >
                                         <button className="w-100 border-0 rounded-3 btn text-light">
-                                            Services
+                                            Add Services
                                         </button>
                                     </Link>
-                                    <Link
+                                    {/* <Link
                                         to={`${url}/makeAdmin`}
                                         className="w-100 border-0 rounded-3 btn subMenu"
                                     >
                                         <button className="w-100 border-0 rounded-3 btn text-light">
                                             Make Admin
                                         </button>
-                                    </Link>
+                                    </Link> */}
                                 </>
                             {/* )} */}
                             <Link
@@ -121,11 +120,11 @@ const Dashboard = () => {
                         <Route exact path={path}>
                             <DashboardHome />
                         </Route>
-                        <Route path={`${path}/appointments`}>
-                            <Appointments />
+                        <Route path={`${path}/servicesList`}>
+                            <ServicesList />
                         </Route>
-                        <Route path={`${path}/services`}>
-                            <Services />
+                        <Route path={`${path}/addServices`}>
+                            <AddServices />
                         </Route>
                         <Route path={`${path}/review`}>
                             <Review />
